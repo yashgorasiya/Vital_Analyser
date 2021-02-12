@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/Theme.AppCompat.Light">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/user_name_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/krona_one"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#000"
+            android:text="@string/app_name"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profilePic_login" />
+
+        <Button
+            android:id="@+id/signOut"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:drawableStart="@drawable/common_google_signin_btn_icon_light"
+            android:enabled="false"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/sign_out"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sign_in_button"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/btn"
+            android:drawableStart="@drawable/common_google_signin_btn_icon_light"
+            android:elevation="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/sign_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_login">
+
+        </Button>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePic_login"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="72dp"
+            android:src="@mipmap/ic_launcher_rounded"
+            app:civ_border_color="#000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

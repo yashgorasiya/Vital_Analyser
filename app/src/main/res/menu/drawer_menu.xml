@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+    <group
+        android:checkableBehavior="single"
+        android:visible="true">
+        <item android:title="General">
+            <menu>
+                <item
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/ic_baseline_home_24"
+                    android:title="@string/home"/>
+                <item
+                    android:id="@+id/nav_Help"
+                    android:icon="@drawable/ic_baseline_settings_24"
+                    android:title="Setting" />
+
+            </menu>
+        </item>
+        <item android:title="Communicate">
+            <menu>
+                <item
+                    android:id="@+id/nav_info"
+                    android:icon="@drawable/ic_baseline_info_24"
+                    android:title="@string/about" />
+                <item
+                    android:id="@+id/nav_login"
+                    android:icon="@drawable/ic_baseline_login_24"
+                    android:title="Log In"/>
+            </menu>
+        </item>
+    </group>
+</menu>
