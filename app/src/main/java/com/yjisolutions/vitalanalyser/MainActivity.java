@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         View header = navigationView.getHeaderView(0);
-        userName = (TextView) header.findViewById(R.id.user_name);
-        userMail = (TextView) header.findViewById(R.id.user_mail);
-        profile = (ImageView) header.findViewById(R.id.profilePic);
+        userName = header.findViewById(R.id.user_name);
+        userMail = header.findViewById(R.id.user_mail);
+        profile = header.findViewById(R.id.profilePic);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Support()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Home()).commit();
 //            navigationView.setCheckedItem(R.id.nav_home);
         }
 
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 navigationView.setCheckedItem(R.id.nav_home);
                 toolbar.setTitle("Home");
-                temp = new Support();
+                temp = new Home();
                 break;
             case R.id.nav_info:
                 navigationView.setCheckedItem(R.id.nav_info);

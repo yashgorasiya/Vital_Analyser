@@ -20,10 +20,12 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
-public class Support extends Fragment {
+import java.util.Objects;
+
+public class Home extends Fragment {
     private DatabaseReference mDatabase;
-    LineGraphSeries<DataPoint> seriesbp,seriesspo2;
-    private GraphView graphbp,graphspo2;
+    LineGraphSeries<DataPoint> series_bp,series_spo2;
+    private GraphView graph_bp,graph_spo2;
     private TextView bp, spo2;
     private int i = 0;
     LottieAnimationView animation;
@@ -37,35 +39,35 @@ public class Support extends Fragment {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         bp = root.findViewById(R.id.bp);
         spo2 = root.findViewById(R.id.spo2);
-        graphbp=root.findViewById(R.id.graphbp);
-        graphspo2=root.findViewById(R.id.graphspo2);
+        graph_bp=root.findViewById(R.id.graphbp);
+        graph_spo2=root.findViewById(R.id.graphspo2);
 
         animation = root.findViewById(R.id.lottieAnimationView);
         animation.setSpeed(1F);
 
-        seriesbp=new LineGraphSeries<DataPoint>();
-        seriesspo2=new LineGraphSeries<DataPoint>();
+        series_bp=new LineGraphSeries<>();
+        series_spo2=new LineGraphSeries<>();
 
-        ValueEventListener bpspo2 = new ValueEventListener() {
+        ValueEventListener bp_spo2 = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
 
-                String bpspo22 = (String) snapshot.child("bloodp").getValue().toString();
-                String bpspo23 = (String) snapshot.child("spo2").getValue().toString();
+                String bp_spo22 = Objects.requireNonNull(snapshot.child("bloodp").getValue()).toString();
+                String bp_spo23 = Objects.requireNonNull(snapshot.child("spo2").getValue()).toString();
 
-                int bpi = (int) Double.parseDouble(bpspo22);
-                int spi = (int) Double.parseDouble(bpspo23);
+                int bpi = (int) Double.parseDouble(bp_spo22);
+                int spi = (int) Double.parseDouble(bp_spo23);
 
                 i=i+1;
-                seriesbp.appendData(new DataPoint(i,bpi),true,25);
-                seriesspo2.appendData(new DataPoint(i,spi),true,25);
+                series_bp.appendData(new DataPoint(i,bpi),true,25);
+                series_spo2.appendData(new DataPoint(i,spi),true,25);
 
-                graphbp.addSeries(seriesbp);
-                graphspo2.addSeries(seriesspo2);
+                graph_bp.addSeries(series_bp);
+                graph_spo2.addSeries(series_spo2);
 
-                bp.setText(bpspo22);
-                spo2.setText(bpspo23);
+                bp.setText(bp_spo22);
+                spo2.setText(bp_spo23);
             }
 
             @Override
@@ -73,7 +75,7 @@ public class Support extends Fragment {
                 Toast.makeText(getActivity(), "Field To Load Data", Toast.LENGTH_SHORT).show();
             }
         };
-        mDatabase.addValueEventListener(bpspo2);
+        mDatabase.addValueEventListener(bp_spo2);
 
         return root;
 
