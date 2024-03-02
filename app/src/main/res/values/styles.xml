@@ -1,11 +1,12 @@
 <resources>
 
-    <style name="Widget.Theme.VitalAnalyser.ActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:background">@color/black_overlay</item>
+    <style name="Widget.Theme.VitalAnalyser.ActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:background">@color/background</item>
     </style>
 
     <style name="Theme.AppCompat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
 </resources>

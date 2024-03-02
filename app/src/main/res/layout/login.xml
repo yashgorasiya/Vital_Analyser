@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frame_home"
+    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:theme="@style/Theme.AppCompat.Light">
-
+    android:theme="@style/Theme.MaterialComponents.DayNight">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/user_name_login"
@@ -20,44 +22,56 @@
             android:fontFamily="@font/krona_one"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:textColor="#000"
             android:text="@string/app_name"
             android:textSize="18sp"
+            android:textColor="@color/primary_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profilePic_login" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_email_login"
+            android:textColor="@color/subtext_text"
+            android:text="@string/support_example_email"
+            app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_login"
+            app:layout_constraintVertical_bias="0.062" />
+
         <Button
             android:id="@+id/signOut"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:background="@drawable/btn"
-            android:drawableStart="@drawable/common_google_signin_btn_icon_light"
-            android:enabled="false"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
+            android:drawableStart="@drawable/googleg_standard_color_18"
+            android:paddingStart="20dp"
+            android:paddingEnd="12dp"
             android:text="@string/sign_out"
+            android:textColor="@color/foreground"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.512"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/sign_in_button"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintEnd_toEndOf="@+id/sign_in_button"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/sign_in_button" />
 
         <Button
             android:id="@+id/sign_in_button"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/btn"
-            android:drawableStart="@drawable/common_google_signin_btn_icon_light"
-            android:elevation="5dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
+            android:drawableStart="@drawable/googleg_standard_color_18"
+            android:paddingStart="20dp"
+            android:paddingEnd="12dp"
             android:text="@string/sign_in"
+            android:textColor="@color/foreground"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_name_login">
 
@@ -67,13 +81,14 @@
             android:id="@+id/profilePic_login"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="72dp"
-            android:src="@mipmap/ic_launcher_rounded"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logo"
             app:civ_border_color="#000000"
             app:civ_border_width="2dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 </FrameLayout>

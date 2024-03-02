@@ -29,11 +29,9 @@ public class login extends Fragment {
     int RC_SIGN_IN = 0;
     Button SignInButton, signOut;
     GoogleSignInClient mGoogleSignInClient;
-    private static final String TAG = "This is an Error";
     FirebaseAuth mAuth;
-    TextView userName;
+    TextView userName,userEmail;
     ImageView profilePic;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +42,7 @@ public class login extends Fragment {
         //google sign  in
 
         userName = root.findViewById(R.id.user_name_login);
+        userEmail = root.findViewById(R.id.user_email_login);
         profilePic = root.findViewById(R.id.profilePic_login);
 
         mAuth = FirebaseAuth.getInstance();
@@ -134,6 +133,7 @@ public class login extends Fragment {
 
             Glide.with(getContext()).load(photo).into(profilePic);
             userName.setText(name);
+            userEmail.setText(email);
 
             signOut.setEnabled(true);
             signOut.setVisibility(View.VISIBLE);

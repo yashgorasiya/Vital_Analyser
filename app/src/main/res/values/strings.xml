@@ -18,7 +18,7 @@
     <string name="analyser">analyser</string>
     <string name="home">Home</string>
     <string name="about">About</string>
-    <string name="bpm">B/M</string>
+    <string name="bpm">BPM</string>
     <string name="persatage">%</string>
     <string name="hard_working_team">Hard Working Team</string>
     <string name="duumy_spo2">96</string>
@@ -41,5 +41,11 @@
     <string name="login_failed">"Login failed"</string>
     <string name="sign_in">SIGN IN</string>
     <string name="sign_out">SIGN OUT</string>
+    <string name="profile">Profile</string>
+    <string name="setting">Tutorial</string>
+    <string name="exit">Exit</string>
+    <string name="tutorial_image">tutorial</string>
+    <string name="support_example_email">vitalanalyser@support.example</string>
+
 
 </resources>

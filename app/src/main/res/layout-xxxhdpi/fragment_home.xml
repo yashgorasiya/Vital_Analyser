@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:theme="@style/Theme.MaterialComponents.DayNight">
+
+    <ScrollView
+        style="@android:style/Widget.Material.ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/home_constraint"
+                android:splitMotionEvents="true">
+
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:contentDescription="@string/graph_image"
+                    android:src="@drawable/graph_text"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    app:cardBackgroundColor="@color/card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="162dp"
+                        android:text="@string/bpm"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/subtext_text"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/bp"
+                        app:layout_constraintTop_toTopOf="@+id/bp"
+                        app:layout_constraintVertical_bias="0.178" />
+
+                    <TextView
+                        android:id="@+id/bp"
+                        android:layout_width="80dp"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="120dp"
+                        android:fontFamily="@font/aladin"
+                        android:text="@string/duumy_bpm"
+                        android:textSize="65sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_text"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintHorizontal_bias="0.29"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView"
+                        app:layout_constraintVertical_bias="0.778" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottieAnimationView"
+                        android:layout_width="125dp"
+                        android:layout_height="96dp"
+                        android:layout_margin="17dp"
+                        android:padding="6dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintHorizontal_bias="0.444"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="@+id/imageView"
+                        app:layout_constraintVertical_bias="0.239"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/heartblink" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView5"
+                    app:cardBackgroundColor="@color/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginEnd="11dp"
+                    android:padding="11dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                    tools:layout_editor_absoluteX="2dp">
+
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphbp"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_margin="15dp"
+                        android:foregroundGravity="bottom"
+                        android:visibility="visible"
+                        app:seriesColor="#FF0000"
+                        app:seriesType="line" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_graph"
+                    app:cardBackgroundColor="@color/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginBottom="20dp"
+                    android:padding="11dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView5"
+                    app:layout_constraintStart_toStartOf="@+id/cardView5"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView5">
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphspo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_margin="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:seriesColor="#FF0000"
+                        app:seriesType="line" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewspo2"
+                    app:cardBackgroundColor="@color/card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="12dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/spo2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="120dp"
+                        android:fontFamily="@font/aladin"
+                        android:text="@string/duumy_spo2"
+                        android:textColor="@color/primary_text"
+                        android:textSize="65sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.492"
+                        app:layout_constraintStart_toEndOf="@+id/cardView"
+                        app:layout_constraintTop_toTopOf="@+id/imageView2"
+                        app:layout_constraintVertical_bias="0.778" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="98dp"
+                        android:layout_marginTop="162dp"
+                        android:layout_marginEnd="15dp"
+                        android:text="@string/persatage"
+                        android:textColor="@color/subtext_text"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/spo2"
+                        app:layout_constraintTop_toTopOf="@+id/spo2"
+                        app:layout_constraintVertical_bias="0.849" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottieAnimationView2"
+                        android:layout_width="125dp"
+                        android:layout_height="96dp"
+                        android:layout_margin="17dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cardView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.222"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/oxygensaturation" />
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

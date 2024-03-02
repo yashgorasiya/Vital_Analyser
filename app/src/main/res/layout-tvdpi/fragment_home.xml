@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:theme="@style/Theme.MaterialComponents.DayNight">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            style="@android:style/Widget.Material.ScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="always">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:splitMotionEvents="true">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    app:cardBackgroundColor="@color/card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="35dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:layout_marginTop="162dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="2dp"
+                        android:text="@string/bpm"
+                        android:textColor="#818181"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/bp"
+                        app:layout_constraintTop_toTopOf="@+id/bp"
+                        app:layout_constraintVertical_bias="0.178" />
+
+                    <TextView
+                        android:id="@+id/bp"
+                        android:layout_width="78dp"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="120dp"
+                        android:fontFamily="@font/aladin"
+                        android:text="@string/duumy_bpm"
+                        android:textColor="#000000"
+                        android:textSize="65sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintHorizontal_bias="0.29"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView"
+                        app:layout_constraintVertical_bias="0.778" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottieAnimationView"
+                        android:layout_width="120dp"
+                        android:layout_height="96dp"
+                        android:layout_margin="17dp"
+                        android:padding="6dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView"
+                        app:layout_constraintHorizontal_bias="0.444"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="@+id/imageView"
+                        app:layout_constraintVertical_bias="0.239"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/heartblink" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    app:cardBackgroundColor="@color/card"
+                    app:cardCornerRadius="35dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="11dp">
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/card"
+                    android:layout_width="415dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="11dp"
+                    android:padding="11dp"
+                    app:cardCornerRadius="35dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardView7"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView5"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/cardView7"
+                    app:layout_constraintTop_toTopOf="@+id/cardView7"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphspo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:theme="@style/Theme.AppCompat.Light"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:seriesColor="#FF0000"
+                        app:seriesType="line" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView7"
+                    app:cardBackgroundColor="@color/card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="24dp"
+                    app:cardCornerRadius="35dp"
+                    app:cardElevation="10dp"
+                    android:layout_marginBottom="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                    <TextView
+                        android:id="@+id/spo2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="120dp"
+                        android:fontFamily="@font/aladin"
+                        android:text="@string/duumy_spo2"
+                        android:textColor="#000000"
+                        android:textSize="65sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.492"
+                        app:layout_constraintStart_toEndOf="@+id/cardView"
+                        app:layout_constraintTop_toTopOf="@+id/imageView2"
+                        app:layout_constraintVertical_bias="0.778" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="98dp"
+                        android:layout_marginTop="162dp"
+                        android:layout_marginEnd="15dp"
+                        android:text="@string/persatage"
+                        android:textColor="#818181"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/spo2"
+                        app:layout_constraintTop_toTopOf="@+id/spo2"
+                        app:layout_constraintVertical_bias="0.849" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottieAnimationView2"
+                        android:layout_width="120dp"
+                        android:layout_height="96dp"
+                        android:layout_margin="17dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cardView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.222"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/oxygensaturation" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardBackgroundColor="@color/card"
+                    android:layout_width="412dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="11dp"
+                    app:cardCornerRadius="35dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="@+id/cardView"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphbp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:foregroundGravity="bottom"
+                        android:theme="@style/Theme.AppCompat.Light"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toEndOf="@+id/cardView"
+                        app:seriesColor="#FF0000"
+                        app:seriesType="line" />
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

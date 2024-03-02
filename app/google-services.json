@@ -1,101 +1,34 @@
 {
   "project_info": {
-    "project_number": "493912116407",
-    "firebase_url": "https://python-19ffc.firebaseio.com",
-    "project_id": "python-19ffc",
-    "storage_bucket": "python-19ffc.appspot.com"
+    "project_number": "433537272850",
+    "firebase_url": "https://vital-analyzer-default-rtdb.firebaseio.com",
+    "project_id": "vital-analyzer",
+    "storage_bucket": "vital-analyzer.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:493912116407:android:6c5fc5f2f6ee4997445132",
-        "android_client_info": {
-          "package_name": "com.example.studytool"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "493912116407-46s0njej3psfc23a7cbq1jcp6j322jeb.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAfBHyeyPDFiXJ_6gVFzktq99feR-YW_Ik"
-        },
-        {
-          "current_key": "AIzaSyBTFv29zsat4Wr27NJoG2ExAEMeBTuzdn4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "493912116407-46s0njej3psfc23a7cbq1jcp6j322jeb.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:493912116407:android:d048d6f06f7554fe445132",
-        "android_client_info": {
-          "package_name": "com.indianhelper.studytool"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "493912116407-46s0njej3psfc23a7cbq1jcp6j322jeb.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAfBHyeyPDFiXJ_6gVFzktq99feR-YW_Ik"
-        },
-        {
-          "current_key": "AIzaSyBTFv29zsat4Wr27NJoG2ExAEMeBTuzdn4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "493912116407-46s0njej3psfc23a7cbq1jcp6j322jeb.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:493912116407:android:02b1c45af7ee720a445132",
+        "mobilesdk_app_id": "1:433537272850:android:cdb32c39cb902d5a479ccb",
         "android_client_info": {
           "package_name": "com.yjisolutions.vitalanalyser"
         }
       },
       "oauth_client": [
         {
-          "client_id": "493912116407-46s0njej3psfc23a7cbq1jcp6j322jeb.apps.googleusercontent.com",
+          "client_id": "433537272850-tvs3o6sov0tg4ph54kl6cif98pab2jft.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAfBHyeyPDFiXJ_6gVFzktq99feR-YW_Ik"
-        },
-        {
-          "current_key": "AIzaSyBTFv29zsat4Wr27NJoG2ExAEMeBTuzdn4"
+          "current_key": "AIzaSyD7OPG9d_YV9bcLEM7UVa3d4WhR4zsan7o"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "493912116407-46s0njej3psfc23a7cbq1jcp6j322jeb.apps.googleusercontent.com",
+              "client_id": "433537272850-tvs3o6sov0tg4ph54kl6cif98pab2jft.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

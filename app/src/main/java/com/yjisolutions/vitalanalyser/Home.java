@@ -23,35 +23,31 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.util.Objects;
 
 public class Home extends Fragment {
-    private DatabaseReference mDatabase;
-    LineGraphSeries<DataPoint> series_bp,series_spo2;
-    private GraphView graph_bp,graph_spo2;
+    LineGraphSeries<DataPoint> series_bp, series_spo2;
+    private GraphView graph_bp, graph_spo2;
     private TextView bp, spo2;
     private int i = 0;
     LottieAnimationView animation;
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_support, container, false);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         bp = root.findViewById(R.id.bp);
         spo2 = root.findViewById(R.id.spo2);
-        graph_bp=root.findViewById(R.id.graphbp);
-        graph_spo2=root.findViewById(R.id.graphspo2);
+        graph_bp = root.findViewById(R.id.graphbp);
+        graph_spo2 = root.findViewById(R.id.graphspo2);
 
         animation = root.findViewById(R.id.lottieAnimationView);
         animation.setSpeed(1F);
 
-        series_bp=new LineGraphSeries<>();
-        series_spo2=new LineGraphSeries<>();
+        series_bp = new LineGraphSeries<>();
+        series_spo2 = new LineGraphSeries<>();
 
         ValueEventListener bp_spo2 = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
 
                 String bp_spo22 = Objects.requireNonNull(snapshot.child("bloodp").getValue()).toString();
                 String bp_spo23 = Objects.requireNonNull(snapshot.child("spo2").getValue()).toString();
@@ -59,15 +55,32 @@ public class Home extends Fragment {
                 int bpi = (int) Double.parseDouble(bp_spo22);
                 int spi = (int) Double.parseDouble(bp_spo23);
 
-                i=i+1;
-                series_bp.appendData(new DataPoint(i,bpi),true,25);
-                series_spo2.appendData(new DataPoint(i,spi),true,25);
+                if (bpi<60){
+                    Toast.makeText(getContext(), "Your BP is LOW !", Toast.LENGTH_SHORT).show();
+                }
+                if (bpi>98){
+                    Toast.makeText(getContext(), "Your BP is Too HIGH !", Toast.LENGTH_SHORT).show();
+                }
+                if (spi<90){
+                    Toast.makeText(getContext(), "Admit to Hospital ASAP", Toast.LENGTH_SHORT).show();
+                }
+                if (spi>98){
+                    Toast.makeText(getContext(), "Oxygen Level :  Healthy !", Toast.LENGTH_SHORT).show();
+                }
+
+
+                i = i + 1;
+                series_bp.appendData(new DataPoint(i, bpi), true, 25);
+                series_spo2.appendData(new DataPoint(i, spi), true, 25);
 
                 graph_bp.addSeries(series_bp);
                 graph_spo2.addSeries(series_spo2);
 
-                bp.setText(bp_spo22);
-                spo2.setText(bp_spo23);
+                String bpString = bp_spo22.split("\\.")[0];
+                String spo2String = bp_spo23.split("\\.")[0];
+
+                bp.setText(bpString);
+                spo2.setText(spo2String);
             }
 
             @Override

@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:theme="@style/Theme.AppCompat.Light"
+    android:theme="@style/Theme.MaterialComponents.DayNight"
     android:id="@+id/aboutus_constrain"
+    android:background="@color/background"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
     >
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="match_parent"
-        android:layout_height="298dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/teamworking" />
@@ -26,7 +31,6 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:fontFamily="@font/krona_one"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -34,176 +38,167 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintTop_toBottomOf="@+id/animationView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="match_parent"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="24dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:cardBackgroundColor="@color/card"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.082">
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_baseline_info_24" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_baseline_person_24" />
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="1dp"
             android:text="Mohinuddin Holy"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="18dp"
             android:text="180200111053"
-            android:textSize="16sp" />
+            android:textSize="13sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
-        android:layout_width="match_parent"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        app:cardBackgroundColor="@color/card"
+        android:layout_marginTop="8dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.059">
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_baseline_info_24" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_baseline_person_24" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="1dp"
             android:text="Jadav Sahajraj"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="18dp"
             android:text="180200111054"
-            android:textSize="16sp" />
+            android:textSize="13sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView4"
-        android:layout_width="match_parent"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        app:cardCornerRadius="15dp"
-        app:cardBackgroundColor="@color/card"
+        app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.082">
+        app:layout_constraintEnd_toEndOf="@+id/cardView3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_baseline_info_24" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_baseline_person_24" />
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="1dp"
             android:text="Yash Gorasiaya"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="18dp"
             android:text="180200111049"
-            android:textSize="16sp" />
+            android:textSize="13sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
-        android:layout_width="match_parent"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:cardBackgroundColor="@color/card"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView4"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView4"
-        app:layout_constraintVertical_bias="0.126">
+        app:layout_constraintStart_toStartOf="@+id/cardView4"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/ic_baseline_info_24" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_baseline_person_24" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="1dp"
             android:text="Hitesh Bariya"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="18dp"
             android:text="170200111006"
-            android:textSize="16sp" />
+            android:textSize="13sp" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
 <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
